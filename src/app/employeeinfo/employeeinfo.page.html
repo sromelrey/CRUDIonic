@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Employee Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-card >  
+    <ion-label>
+      <ion-card-header>
+      <ion-label position="stacked" color="primary">Name:</ion-label>
+      <h5>{{emps.FirstName}} {{emps.LastName}} </h5> 
+      </ion-card-header>
+  <ion-card-content>
+   <ion-label position="stacked" color="primary"> ContactNumber:</ion-label>
+    <p> {{emps.ContactNumber}} </p>  
+       <ion-label position="stacked" color="primary"> Skills:</ion-label>
+    <p> {{emps.Skills}}</p> 
+  </ion-card-content>
+     
+    </ion-label> 
+    <ion-grid>
+ <ion-row>
+          <ion-col>
+            <div> <ion-button color="primary" expand="block" (click)="edit(emps)">UPDATE</ion-button></div>
+          </ion-col>
+          <ion-col>
+            <div> <ion-button color="danger" expand="block" (click)="delete(emps)">DELETE</ion-button></div>
+          </ion-col>
+        </ion-row>
+ 
+   
+       </ion-grid>
+  </ion-card>
+  
+</ion-content>

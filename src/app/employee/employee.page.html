@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+<form #empForm="ngForm" novalidate>
+  <ion-list lines="none">
+  <ion-item >
+    <ion-label position="stacked" color="primary">First Name</ion-label>
+    <ion-input  [(ngModel)]="emp.FirstName" name="FirstName" type="text" #FirstName="ngModel" [ngModelOptions]="{standalone: true}" required ></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="FirstName.valid || submitted == false" class="ion-padding-start">
+      First Name is required
+    </p>
+  </ion-text>  
+  <ion-item>
+    <ion-label position="stacked" color="primary">Last Name</ion-label>
+    <ion-input  [(ngModel)]="emp.LastName" name="LastName" type="text"  #LastName="ngModel" [ngModelOptions]="{standalone: true}" required ></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="LastName.valid || submitted == false" class="ion-padding-start">
+      Last Name is required
+    </p>
+  </ion-text>
+  <ion-item>
+    <ion-label position="stacked" color="primary">Skills</ion-label>
+    <ion-input  [(ngModel)]="emp.Skills" name="Skills"  type="text" #Skills="ngModel"[ngModelOptions]="{standalone: true}" required ></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="Skills.valid || submitted == false" class="ion-padding-start">
+      Skills is required
+    </p>
+  </ion-text>
+  <ion-item>
+    <ion-label position="stacked" color="primary">Contact Number</ion-label>
+    <ion-input  [(ngModel)]="emp.ContactNumber" name="ContactNumber" type="number" #ContactNumber="ngModel" [ngModelOptions]="{standalone: true}"required></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="ContactNumber.valid || submitted == false" class="ion-padding-start">
+      Contact Number is required
+    </p>
+  </ion-text>
+</ion-list>
+<div class="ion-padding">
+    <ion-button type="submit" (click)="onSubmit(empForm)" expand="block" >Add Employee</ion-button>
+  </div>
+</form>
+</ion-grid>
+</ion-content>

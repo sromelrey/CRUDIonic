@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+<form #empeditinfoForm="ngForm" novalidate>
+  <ion-list lines="none">
+  <ion-item >
+    <ion-label position="stacked" color="primary">First Name</ion-label>
+    <ion-input  [(ngModel)]="emps.FirstName" name="FirstName" type="text" #FirstName="ngModel" [ngModelOptions]="{standalone: true}" required ></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="FirstName.valid || submitted == false" class="ion-padding-start">
+      First Name is required
+    </p>
+  </ion-text>  
+  <ion-item>
+    <ion-label position="stacked" color="primary">Last Name</ion-label>
+    <ion-input  [(ngModel)]="emps.LastName" name="LastName" type="text"  #LastName="ngModel" [ngModelOptions]="{standalone: true}" required ></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="LastName.valid || submitted == false" class="ion-padding-start">
+      Last Name is required
+    </p>
+  </ion-text>
+  <ion-item>
+    <ion-label position="stacked" color="primary">Skills</ion-label>
+    <ion-input  [(ngModel)]="emps.Skills" name="Skills"  type="text" #Skills="ngModel"[ngModelOptions]="{standalone: true}" required ></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="Skills.valid || submitted == false" class="ion-padding-start">
+      Skills is required
+    </p>
+  </ion-text>
+  <ion-item>
+    <ion-label position="stacked" color="primary">Contact Number</ion-label>
+    <ion-input  [(ngModel)]="emps.ContactNumber" name="ContactNumber" type="number" #ContactNumber="ngModel" [ngModelOptions]="{standalone: true}"required></ion-input>		
+  </ion-item>
+  <ion-text color="danger">
+    <p [hidden]="ContactNumber.valid || submitted == false" class="ion-padding-start">
+      Contact Number is required
+    </p>
+  </ion-text>
+</ion-list>
+<div class="ion-padding">
+    <ion-button type="submit" (click)="onSubmitEdit(empeditinfoForm)" expand="block" >Update Employee</ion-button>
+  </div>
+</form>
+</ion-grid>
+</ion-content>

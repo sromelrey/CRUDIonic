@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Employee List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let emp of emps" (click)=Edit(emp)>
+  
+    <ion-label>
+      <ion-card-header>
+      <h5>{{emp.FirstName}} {{emp.LastName}} </h5> 
+      </ion-card-header>
+  <ion-card-content>
+    <p> ContactNumber: {{emp.ContactNumber}} </p>  <br>
+    <p>Skills: {{emp.Skills}}</p> 
+  </ion-card-content>
+     
+    </ion-label> 
+  </ion-card>
+  
+  
+</ion-content>
